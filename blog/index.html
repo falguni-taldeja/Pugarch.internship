@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semantic Layout Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-areas:
+                "header"
+                "nav"
+                "main"
+                "footer";
+            grid-template-columns: 1fr;
+            gap: 10px;
+            padding: 10px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #cce5ff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #f8d7da;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            grid-area: main;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+        }
+
+        section {
+            background-color: #ed7062;
+            padding: 10px;
+        }
+
+        article {
+            background-color: #e5d4f7;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        aside {
+            background-color: #fff3cd;
+            padding: 10px;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #d4edda;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My First Blog</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a> | 
+        <a href="#about">About</a> | 
+        <a href="#goal">Goal</a>
+    </nav>
+
+    <main>
+        <div>
+            <section id="home">
+              <h2>🌟 My First Blog Post</h2>
+                 <p><em>Posted on 2<sup>nd</sup>August 2025</em></p>
+                 <p>This is my first post! I'm excited to share my thoughts about me , my thoughts, my work. Stay tuned!</p>
+            
+              <h2>💻 How I Built My First Website</h2>
+                  <p><em>Posted on 2<sup>nd</sup> August 2025</em></p>
+                  <p>I’ll walk you through how I created my first personal site using HTML, CSS, and a bit of JavaScript.</p>
+            </section>
+
+            <article id="about">
+                <h2>🚺About Me </h2>
+                <img src="falguniblog.jpg"height="400"/>
+              <p>I am falguni Taldeja, currently studying in sipna college of engineering and completed my diploma from Dr.panjabrao deshmukh girls polytechnic,amravati. <a href="https://www.neusourcestartup.com/companies/pugarch-technology-private-limited">PugArch</a></p>
+            </article>
+        </div>
+
+        <aside id="goal">
+            <h2>🎯Goal</h2>
+              <p> As a student, my aim is to acquire knowledge, develop skills, and achieve academic excellence. I'm focused on learning and growing, both personally and professionally, to prepare myself for future opportunities and challenges</p>
+              <p>I'm committed to developing a range of skills, including critical thinking, problem-solving, communication, and teamwork, that will be valuable in my future career</p>
+        </aside>
+    </main>
+
+    <footer>
+        <h2>📲Contact</h2>
+        <p>Contact no. 9422918292</p>
+    </footer>
+
+</body>
+</html>
