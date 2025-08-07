@@ -3,24 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Light/Dark Theme Toggle</title>
+  <title>Light/Dark Toggle Theme</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
+    <h1>🌗 Theme Toggle</h1>
+    <label class="theme-switch" aria-label="Toggle Dark Mode">
+      <input type="checkbox" id="toggle-checkbox" aria-checked="false" role="switch" />
+      <span class="slider"></span>
+    </label>
   </header>
 
   <main>
-    <div class="card">
-        <h1>🌗 Theme Toggle Demo</h1>
-    <button id="theme-toggle" aria-label="Toggle Dark Mode" role="switch" aria-checked="false">
-      🌞
-    </button>
-      <h2>Beautiful Card</h2>
-      <p>This is a responsive card. Toggle the theme to see the magic!</p>
-    </div>
+    <section class="card">
+      <h2>Elegant Card</h2>
+      <p>This card updates with the theme. Try switching between light and dark modes!</p>
+    </section>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+
