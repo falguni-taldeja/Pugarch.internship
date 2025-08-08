@@ -1,97 +1,104 @@
-:root{
-    --primary:#4f46e5;
-    --bg-light:linear-gradient(135deg,#e0f7fa,#ffffff);
-    --bg-dark:linear-gradient(135deg,#0f172a,#1e293b);
-    --card-bg:rgba(255,255,255,0.2);
-    --text-color:#111;
-    --error-color:#ef4444;
-    --shadow:rgba(0,0,0,0.2);
+:root {
+  --primary: #4f46e5;
+  --bg-light: linear-gradient(135deg, #e0f7fa, #ffffff);
+  --bg-dark: linear-gradient(135deg, #0f172a, #1e293b);
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --text-color: #111;
+  --error-color: #ef4444;
+  --shadow: rgba(0, 0, 0, 0.2);
 }
 
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Times New Roman', Times, serif;
-    background: var(--bg-light);
-    color: var(--text-color);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition:var(--bg-dark) ease-in-out;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.weather-card{
-    background: var(--card-bg);
-    backdrop-filter: blur(20px);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px var(--shadow);
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    transition: all 0.4s ease-in-out;
-
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: background 0.4s ease-in-out;
 }
 
-.weather-card h2{
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--primary);
+.weather-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px var(--shadow);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  transition: all 0.4s ease-in-out;
 }
 
-input[type="text"]{
-    padding: 0.7rem;
-    width: 80%;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    outline: none;
-    margin-bottom: 1rem;
+.weather-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
 }
 
-button{
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
-    background-color: var(--primary);
-    color: white;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    transition: all 0.3s  ;
+input[type="text"] {
+  padding: 0.7rem;
+  width: 80%;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 1rem;
 }
 
-button:hover{
-    background-color: blue;
-
-}
-#weatherInfo img{
-    width: 80px;
-    height: 80px;
-}
-
-#cityName{
-    font-size: 1.4rem;
-    margin: 0.5rem 0;;
+button {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-#temperature{
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0.3rem 0;
+button:hover {
+  background-color: #3b34c2;
 }
 
-#description{
-    font-size: 1.1rem;
-    opacity: 0.8;
+#weatherinfo img {
+  width: 80px;
+  height: 80px;
+  margin: 0.5rem 0;
 }
 
-.error{
-    color:var(--error-color);
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
-}
-.hidden{
-    display:none;
+#cityName {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
 }
 
+#temperature {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.3rem 0;
+}
 
+#description {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
