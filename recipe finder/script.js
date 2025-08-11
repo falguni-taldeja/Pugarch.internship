@@ -1,39 +1,31 @@
-// Function to search for recipes
-function searchRecipe() {
-    let query = document.getElementById("searchInput").value.trim();
+document.getElementById("searchForm").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-    if (query === "") {
-        alert("Please enter a recipe name!");
-        return;
-    }
+    let query = document.getElementById("searchInput").value;
+    let apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`;
 
-    // API call to TheMealDB
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
+    fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
             let resultsContainer = document.getElementById("recipeResults");
-            resultsContainer.innerHTML = ""; // Clear old results
+            resultsContainer.innerHTML = "";
 
             if (data.meals) {
                 data.meals.forEach(meal => {
-                    let card = document.createElement("div");
-                    card.classList.add("card");
-
-                    card.innerHTML = `
-                        <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-                        <h3>${meal.strMeal}</h3>
-                        <p><strong>Category:</strong> ${meal.strCategory}</p>
-                        <a href="${meal.strSource || '#'}" target="_blank">View Recipe</a>
+                    let recipeCard = `
+                        <div class="recipe-card">
+                            <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                            <h3>${meal.strMeal}</h3>
+                            <a href="${meal.strSource || meal.strYoutube}" target="_blank">View Recipe</a>
+                        </div>
                     `;
-
-                    resultsContainer.appendChild(card);
+                    resultsContainer.innerHTML += recipeCard;
                 });
             } else {
-                resultsContainer.innerHTML = `<p>No recipes found! Try another search.</p>`;
+                resultsContainer.innerHTML = "<p>No recipes found. Try another search!</p>";
             }
         })
         .catch(error => {
             console.error("Error fetching recipes:", error);
-            alert("Something went wrong. Please try again later.");
         });
-}
+});

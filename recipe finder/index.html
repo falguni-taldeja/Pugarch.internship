@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Finder</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <img src="img.png" alt="Recipe Logo" class="logo">
-        <h1>🍽 Recipe Finder</h1>
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search for a recipe...">
-            <button onclick="searchRecipe()">Search</button>
-        </div>
-        <div id="recipeResults" class="results"></div>
+        <img src="img.png" alt="Logo" class="logo">
+        <h1>Recipe Finder</h1>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search for recipes..." required>
+            <button type="submit">Search</button>
+        </form>
+        <div id="recipeResults" class="recipe-container"></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
-
